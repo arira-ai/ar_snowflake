@@ -1,5 +1,3 @@
-`ar_snowflake/01-foundations/02-sql-essentials/snowflake-sql-essentials.md`
-
 # Snowflake SQL Essentials
 
 This section covers the SQL capabilities of Snowflake. Snowflake supports ANSI SQL while also introducing several extensions optimized for cloud-native analytics, semi-structured data, and scalable data processing.
@@ -375,3 +373,4 @@ Built-in historical querying
 Fully managed performance tuning
 
 These capabilities make Snowflake SQL suitable for large-scale analytics and modern data engineering workloads.
+
