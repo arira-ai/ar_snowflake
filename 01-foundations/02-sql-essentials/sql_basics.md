@@ -30,18 +30,51 @@ Major SQL categories include:
 
 # Snowflake SQL Architecture Context
 
-```
-flowchart LR
-A[User SQL Query]
-B[Cloud Services Parser]
-C[Query Optimizer]
-D[Virtual Warehouse Execution]
-E[Storage Layer]
+```mermaid
+---
+config:
+  theme: neo-dark
+---
+flowchart TB
+ subgraph CS["Cloud Services Layer - The Brain"]
+        B["Authentication & Access Control"]
+        A["User SQL Query"]
+        C["Query Parser & Optimizer"]
+        D["Infrastructure Management"]
+  end
+ subgraph VW["Virtual Warehouse Layer - The Brawn"]
+        E["Compute Node 1"]
+        F["Compute Node 2"]
+        G["Multi-Cluster Scaling"]
+        H["Local SSD Caching"]
+  end
+ subgraph SL["Storage Layer - The Memory"]
+        I[("Centralized S3/
+        Blob Storage")]
+        J["Micro-partitions & Metadata"]
+  end
+    A L_A_B_0@--> B
+    B L_B_C_0@--> C
+    C L_C_D_0@--> D
+    D L_D_E_0@--> E & F & G
+    E L_E_H_0@--> H
+    F L_F_H_0@--> H
+    G L_G_H_0@--> H
+    H L_H_I_0@--> I
+    I L_I_J_0@--> J
 
-A --> B
-B --> C
-C --> D
-D --> E
+
+    L_A_B_0@{ animation: slow } 
+    L_B_C_0@{ animation: slow } 
+    L_C_D_0@{ animation: slow } 
+    L_D_E_0@{ animation: slow } 
+    L_D_F_0@{ animation: slow } 
+    L_D_G_0@{ animation: slow } 
+    L_E_H_0@{ animation: slow } 
+    L_F_H_0@{ animation: slow } 
+    L_G_H_0@{ animation: slow } 
+    L_H_I_0@{ animation: slow } 
+    L_I_J_0@{ animation: slow }
 ```
 
 SQL queries are processed by the cloud services layer and executed by virtual warehouses.
@@ -373,4 +406,5 @@ Built-in historical querying
 Fully managed performance tuning
 
 These capabilities make Snowflake SQL suitable for large-scale analytics and modern data engineering workloads.
+
 
