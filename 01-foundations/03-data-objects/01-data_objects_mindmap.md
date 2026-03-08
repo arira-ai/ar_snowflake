@@ -1,0 +1,46 @@
+Snowflake data objects form a hierarchical structure used to organize, store, and manage data. The mindmap below shows how different objects relate to each other inside a Snowflake environment. It starts from the Snowflake account and expands into databases, schemas, and the different data objects used for storage, transformation, ingestion, and automation.
+
+```mermaid
+---
+config:
+  theme: mc
+---
+mindmap
+((Snowflake Hierarchy))
+  ((Organization))
+    ))Account((
+      {{Database}}
+        Schema
+          Storage_Objects
+            Tables
+              Permanent
+              Transient
+              Temporary
+              External
+              Iceberg_Tables
+          Transformation_Logic
+            Views
+              Standard
+              Materialized
+              Secure_Views
+            Dynamic_Tables
+            Functions_Procedures
+              UDFs
+              Stored_Procedures
+          Data_Ingestion
+            Stages
+              Internal
+              External
+            Pipes_Snowpipe
+            File_Formats
+          Automation_Tracking
+            Tasks
+            Streams
+            Alerts
+          Governance_Security
+            Masking_Policies
+            Row_Access_Policies
+            Tags
+          Utility
+            Sequences
+```
